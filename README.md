@@ -62,7 +62,7 @@ Zone 6. Anaerobic
 
 NA heart, 121% + power
 
-Zone 7. Neuromascular zone
+Zone 7. Neuromuscular zone
 
 Going as hard as you can for 10 seconds
 
