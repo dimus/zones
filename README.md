@@ -22,47 +22,47 @@ FTP heart rate = 220 - age
 
 #### Zones
 
-1. Active recovery
+Zone 1. Active recovery
 
 Day after a hard ride
 
 68% of max heart rate, or 55% of power
 
-2. Endurance Zone
+Zone 2. Endurance
 
 Trained cyclist should endure it 3 hours or more on consecutive days. Endurance
 training zone
 
 69-83% max heart rate, 56-75% of power
 
-3. Tempo Zone
+Zone 3. Tempo
 
 0.5-3 hours on this intensity, couple days back to back is possible. Talking is
 hard.
 
 83-94% of heart rate, 76-90% of power
 
-4. Lactate threshold zone
+Zone 4. Lactate Threshold
 
 2 lots by 20 minutes separated by 5 min of easy riding, conversation is
 difficult, not for consequent days.
 
 95-105% heart rate, 91-105% power
 
-5. V02
+Zone 5. V02
 Aerobic threshold, 3-8 minutes of duration
 
 Burning in legs, high breathing
 
 >106% heart, 106-120% power
 
-6. Anaerobic
+Zone 6. Anaerobic
 
 30sec-3min intervals
 
 NA heart, 121% + power
 
-7. Neuromascular zone
+Zone 7. Neuromascular zone
 
 Going as hard as you can for 10 seconds
 
