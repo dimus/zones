@@ -54,7 +54,7 @@ Aerobic threshold, 3-8 minutes of duration
 
 Burning in legs, high breathing
 
->106% heart, 106-120% power
+\>106% heart, 106-120% power
 
 Zone 6. Anaerobic
 
