@@ -1,6 +1,7 @@
 module Lib
     ( ui
     , output
+    , zone
     ) where
 
 import qualified Data.Map as M
@@ -8,29 +9,31 @@ import qualified Data.Map as M
 ui :: IO ()
 ui = do
   putStrLn "Enter max HR"
-  -- input <- getLine
-  putStrLn $ output "180"
-  -- input
+  input <- getLine
+  let hr = read input :: Float
+  putStrLn $ output hr
 
-output :: String -> String
-output input = ("Zones for max HR " ++ show hr ++ ".\n\n"
+output :: Float -> String
+output hr = ("Zones for max HR " ++ show hr ++ ".\n\n"
              ++ "1. Active Recovery:   HR (" ++ zoneHr 1 ++ ")\n"
              ++ "2. Endurance:         HR (" ++ zoneHr 2 ++ ")\n"
              ++ "3. Tempo:             HR (" ++ zoneHr 3 ++ ")\n"
              ++ "4. Lactate Threshold: HR (" ++ zoneHr 4 ++ ")\n"
              ++ "5. VO2:               HR (" ++ zoneHr 5 ++ ")\n")
   where
-    hr = read input :: Float
     zoneHr = zone hr
 
 zone :: Float -> Float -> String
-zone h zoneNum =
-  show (round $ h * (res !! 0)) ++ "-" ++ show(round $ h * (res !! 1))
+zone hr zoneNum =
+  min ++ "-" ++ max
   where
     val = M.lookup zoneNum zones
     res = case val of
       Nothing -> error "Something is wrong"
       Just a -> a
+    f x = round $ hr * ((!!) res x)
+    min = show $ f 0
+    max = show $ f 1
 
 zones :: M.Map Float [Float]
 zones = foldr (\(x:xs) -> M.insert x xs) M.empty zonesList
