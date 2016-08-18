@@ -1,5 +1,5 @@
 name:                zones
-version:             0.2.0.0
+version:             0.2.1.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
 homepage:            https://github.com/githubuser/zones#readme
@@ -20,7 +20,7 @@ library
                      , containers >= 0.5 && < 1
   default-language:    Haskell2010
 
-executable zones-exe
+executable zones
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
@@ -36,6 +36,7 @@ test-suite zones-test
                      , zones
                      , hspec
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
+  other-modules:       SpecHelper
   default-language:    Haskell2010
 
 source-repository head
