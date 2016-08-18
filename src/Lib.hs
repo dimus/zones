@@ -10,8 +10,8 @@ import System.Environment
 
 ui :: IO ()
 ui = do
-  args <- getArgs
-  let hr = read (head args) :: Int
+  (input:_) <- getArgs
+  let hr = read input :: Int
   putStrLn $ output hr
 
 output :: Int -> String

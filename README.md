@@ -65,9 +65,3 @@ NA heart, 121% + power
 Zone 7. Neuromuscular zone
 
 Going as hard as you can for 10 seconds
-
-
-
-
-
-
