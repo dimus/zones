@@ -6,12 +6,12 @@ module Lib
     ) where
 
 import qualified Data.Map as M
+import System.Environment
 
 ui :: IO ()
 ui = do
-  putStrLn "Enter max HR"
-  input <- getLine
-  let hr = read input :: Int
+  args <- getArgs
+  let hr = read (head args) :: Int
   putStrLn $ output hr
 
 output :: Int -> String
