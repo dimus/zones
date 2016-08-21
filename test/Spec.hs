@@ -2,6 +2,11 @@ import SpecHelper
 
 main :: IO ()
 main = hspec $ do
+  describe "heartRate" $ do
+    it "returns Nothing if wrong input" $ do
+      heartRate "what?" `shouldBe` Nothing
+      heartRate "180" `shouldBe` (Just 180 :: Maybe Int)
+
   describe "zone" $ do
     it "returns a tuple of  min and max heart rate" $ do
       zone 180 1 `shouldBe` (1,122)

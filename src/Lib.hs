@@ -1,29 +1,34 @@
 module Lib
     ( ui
     , output
+    , heartRate
     , zone
     , formatZone
     ) where
 
 import qualified Data.Map as M
+import Text.Read(readMaybe)
 import System.Environment
 
 ui :: IO ()
 ui = do
   (input:_) <- getArgs
-  let hr = read input :: Int
+  let hr = heartRate input
   putStrLn $ output hr
 
-output :: Int -> String
-output hr = ("Zones for max HR " ++ show hr ++ ".\n\n"
-             ++ "1. Active Recovery:   HR (" ++ fzone 1 ++ ")\n"
-             ++ "2. Endurance:         HR (" ++ fzone 2 ++ ")\n"
-             ++ "3. Tempo:             HR (" ++ fzone 3 ++ ")\n"
-             ++ "4. Lactate Threshold: HR (" ++ fzone 4 ++ ")\n"
-             ++ "5. VO2:               HR (" ++ fzone 5 ++ ")\n")
+output :: Maybe Int -> String
+output Nothing = "Wrong input, enter heart rate like: 180"
+output (Just hr) = ("Zones for max HR " ++ show hr ++ ".\n\n"
+                  ++ "1. Active Recovery:   HR (" ++ fzone 1 ++ ")\n"
+                  ++ "2. Endurance:         HR (" ++ fzone 2 ++ ")\n"
+                  ++ "3. Tempo:             HR (" ++ fzone 3 ++ ")\n"
+                  ++ "4. Lactate Threshold: HR (" ++ fzone 4 ++ ")\n"
+                  ++ "5. VO2:               HR (" ++ fzone 5 ++ ")\n")
   where
     fzone = formatZone hr
 
+heartRate :: String -> Maybe Int
+heartRate hr = readMaybe hr :: Maybe Int
 
 formatZone :: Int -> Int -> String
 formatZone hr zoneNum =
